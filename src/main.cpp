@@ -14,7 +14,7 @@ class $modify(PlayerObject) {
         // Versão compatível com Geode 2.2081
         if (auto playLayer = PlayLayer::get()) {
             if (this == playLayer->m_player1) {
-                tempoDecorrido += dt;
+                tempoDecorrido += 10;
 
                 if (tempoDecorrido >= proximaInversao) {
                     // Inverte a gravidade usando a variável correta de checagem
