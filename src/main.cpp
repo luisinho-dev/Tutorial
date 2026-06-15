@@ -11,18 +11,21 @@ class $modify(PlayerObject) {
     void update(float dt) {
         PlayerObject::update(dt);
 
-        if (this == m_gameLayer->m_player1) {
-            tempoDecorrido += dt;
+        // Versão compatível com Geode 2.2081
+        if (auto playLayer = PlayLayer::get()) {
+            if (this == playLayer->m_player1) {
+                tempoDecorrido += dt;
 
-            if (tempoDecorrido >= proximaInversao) {
-                this->flipGravity(!m_isUpsideDown, true);
+                if (tempoDecorrido >= proximaInversao) {
+                    // Inverte a gravidade usando a variável correta de checagem
+                    this->flipGravity(!m_isUpsideDown, true);
 
-                Notification::create("GRAVIDADE ALTERADA!", NotificationIcon::Warning)->show();
+                    Notification::create("GRAVIDADE ALTERADA!", NotificationIcon::Warning)->show();
 
-                tempoDecorrido = 0.0f;
-                proximaInversao = 5.0f + static_cast<float>(rand() % 11);
+                    tempoDecorrido = 0.0f;
+                    proximaInversao = 5.0f + static_cast<float>(rand() % 11);
+                }
             }
         }
     }
 };
-
