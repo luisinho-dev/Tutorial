@@ -20,7 +20,7 @@ class $modify(PlayerObject) {
                     // Inverte a gravidade usando a variável correta de checagem
                     this->flipGravity(!m_isUpsideDown, true);
 
-                    Notification::create("GRAVIDADE ALTERADA!", NotificationIcon::Warning)->show();
+                    Notification::create("Gravity Changed!", NotificationIcon::Warning)->show();
 
                     tempoDecorrido = 0.0f;
                     proximaInversao = 5.0f + static_cast<float>(rand() % 11);

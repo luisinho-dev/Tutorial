@@ -7,10 +7,10 @@
 		"ios": "2.2081"
 	},
 	"id": "luis.tutorial",
-	"name": "Tutorial",
+	"name": "Gravity Flip",
 	"version": "v1.0.0",
 	"developer": "Luis",
-	"description": "mod Test warning!",
+	"description": "mod Test Warning! The gravity is 15% or 20% to random Gravity",
 	"dependencies": {
 		"geode.node-ids": ">=v1.23.3"
 	}
